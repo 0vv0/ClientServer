@@ -38,12 +38,14 @@ public class Client extends Thread {
         receivingThread.start();
         sendingThread.start();
         while (!isInterrupted()) {
+            log("ping");
             yield();
         }
 
     }
 
     public synchronized void send(String msg) {
+        log("send");
         this.msg = msg;
     }
 
@@ -52,7 +54,7 @@ public class Client extends Thread {
     }
 
     public synchronized void receive(String msg) {
-        log(msg);
+        log("receive: " +msg);
         Message message = handler.obtainMessage();
         Bundle bundle = message.getData();
         bundle.putString("key", msg);
@@ -72,6 +74,7 @@ public class Client extends Thread {
     public void interrupt() {
         Log.e(TAG, "interrupted");
         super.interrupt();
+
         receivingThread.interrupt();
         sendingThread.interrupt();
 

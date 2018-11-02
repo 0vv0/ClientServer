@@ -68,16 +68,13 @@ public class Server extends Thread {
         clients.removeAll(clientsToRemove);
     }
 
-    public void tierDown(){
-        for (Client client : clients) {
-            client.interrupt();
-        }
-    }
-
     @Override
     public void interrupt() {
         super.interrupt();
-        tierDown();
+
+        for (Client client : clients) {
+            client.interrupt();
+        }
     }
 
     public synchronized int getPort() {
