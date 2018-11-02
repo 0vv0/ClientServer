@@ -4,14 +4,36 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+    <Button android:layout_width="match_parent"
+            android:layout_height="50pt"
+            android:id="@+id/startserver"
+            android:text="Start server on port 3550"/>
+
+    <LinearLayout android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:orientation="horizontal">
+        <TextView android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="127.0.0.1"
+                  android:id="@+id/host"/>
+        <TextView android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text=":"
+                  android:id="@+id/separator"/>
+        <TextView android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:text="3550"
+                  android:id="@+id/port"/>
+    </LinearLayout>
+
     <TextView android:layout_width="match_parent"
               android:layout_height="50pt"
               android:text="_______"
               android:id="@+id/msg"/>
     <Button android:layout_width="match_parent"
             android:layout_height="50pt"
-            android:id="@+id/startserver"
-            android:text="Start server on port 3550"/>
+            android:text="Send"
+            android:id="@+id/send"/>
     <TextView android:layout_width="match_parent"
               android:layout_height="50pt"
               android:id="@+id/log"/>
