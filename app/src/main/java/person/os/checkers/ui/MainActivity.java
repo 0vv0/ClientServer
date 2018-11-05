@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity implements Handler.Callback 
         cl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //TODO:
                 if (true) {
                 }
             }
